@@ -1,7 +1,8 @@
 use anchor_lang::prelude::*;
 
-use crate::{constants::PROGRAM_VERSION};
+use crate::{constants::PROGRAM_VERSION, utils::account_length::AccountLength};
 
+// accountに付け足せる任意のデータ
 #[account]
 pub struct LendingMarket {
   // version of lending market
@@ -10,6 +11,7 @@ pub struct LendingMarket {
   // TODO:
   pub bump_seed: u8,
 
+  // レンディンぐを始めたい人
   pub owner: Pubkey,
 
   pub quote_currency: [u8; 32],
